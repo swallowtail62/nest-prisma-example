@@ -16,4 +16,9 @@ export class OrganizationsService {
   async findAll(): Promise<Organization[]> {
     return this.organizationsRepository.findAll();
   }
+
+  async create({ name }: { name: string }): Promise<Organization> {
+    const org = new Organization(name);
+    return this.organizationsRepository.create(org);
+  }
 }

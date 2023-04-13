@@ -5,10 +5,14 @@ export const OrganizationsRepositoryToken = Symbol('OrganizationsRepository');
 
 export interface OrganizationsRepository {
   findAll(): Promise<Organization[]>;
+
+  create(organization: Organization): Promise<Organization>;
 }
 
 @Injectable()
-export class OrganizationsRepositoryImpl implements OrganizationsRepository {
+export class InMemoryOrganizationsRepository
+  implements OrganizationsRepository
+{
   private organizations: Organization[] = [
     new Organization('Organization 1'),
     new Organization('Organization 2'),
@@ -16,5 +20,10 @@ export class OrganizationsRepositoryImpl implements OrganizationsRepository {
 
   findAll(): Promise<Organization[]> {
     return Promise.resolve(this.organizations);
+  }
+
+  create(organization: Organization): Promise<Organization> {
+    this.organizations.push(organization);
+    return Promise.resolve(organization);
   }
 }

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { OrganizationsController } from './organizations.controller';
 import { OrganizationsService } from './organizations.service';
 import {
-  OrganizationsRepositoryImpl,
+  InMemoryOrganizationsRepository,
   OrganizationsRepositoryToken,
 } from './organizations.repository';
 
@@ -13,7 +13,7 @@ import {
     OrganizationsService,
     {
       provide: OrganizationsRepositoryToken,
-      useClass: OrganizationsRepositoryImpl,
+      useClass: InMemoryOrganizationsRepository,
     },
   ],
   exports: [OrganizationsRepositoryToken],
