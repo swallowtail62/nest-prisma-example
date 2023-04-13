@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { ULID } from 'src/common/ulid';
+import { ULID } from '@/common/ulid';
 
 const organizationIdSchema = z
   .string()
