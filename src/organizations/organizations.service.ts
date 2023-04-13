@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { Organization } from './organizations.entity';
+import { Organization } from './domain';
+
 import {
   OrganizationsRepository,
   OrganizationsRepositoryToken,

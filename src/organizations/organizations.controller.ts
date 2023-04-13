@@ -1,6 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { OrganizationsService } from './organizations.service';
-import { Organization } from './organizations.entity';
+import { Organization } from './domain';
 
 @Controller({
   path: 'organizations',

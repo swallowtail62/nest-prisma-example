@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Organization } from './organizations.entity';
+import { Organization } from './domain';
 
 export const OrganizationsRepositoryToken = Symbol('OrganizationsRepository');
 
@@ -10,7 +10,8 @@ export interface OrganizationsRepository {
 @Injectable()
 export class OrganizationsRepositoryImpl implements OrganizationsRepository {
   private organizations: Organization[] = [
-    new Organization('001', 'Organization 1'),
+    new Organization('Organization 1'),
+    new Organization('Organization 2'),
   ];
 
   findAll(): Promise<Organization[]> {
