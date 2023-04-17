@@ -21,6 +21,8 @@
     "swag:gen": "ts-node -r tsconfig-paths/register src/cli/gen-swag-doc.ts"
   },
   "dependencies": {
+    "@anatine/zod-nestjs": "^1.9.2",
+    "@anatine/zod-openapi": "^1.12.0",
     "@nestjs/common": "9.4.0",
     "@nestjs/core": "9.4.0",
     "@nestjs/platform-express": "9.4.0",
